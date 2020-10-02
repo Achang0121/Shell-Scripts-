@@ -19,9 +19,9 @@ echo "=====进入Python3安装流程====="
 echo "+++++安装依赖+++++"
 yum install openssl-devel bzip2-devel expat-devel gdbm-devel readline-devel sqlite-devel
 
-python_version="3.8.6"
+python_version="3.8.6"	# 安装版本，这里我写死了，也可以read获取
 
-cd /usr/local/
+cd /usr/local/	# 安装目录
 wget https://www.python.org/ftp/python/${python_version}/Python-${python_version}.tar.xz
 
 tar -xf Python-${python_version}.tar.xz
@@ -35,8 +35,9 @@ make && make altinstall
 
 if [ $? == 0 ]; then
 	echo "=====Python3已安装成功====="
+	echo "=====创建软链接====="
 	ln -s /usr/local/python3/bin/python3.8 /usr/bin/python3
-	ln -s /usr/local/python3/bin/pip3.8 /usr/bin/p
+	ln -s /usr/local/python3/bin/pip3.8 /usr/bin/pip3
 	python3 --version && pip3 --version
 	if [ $? == 0 ]; then
 		exit 0
