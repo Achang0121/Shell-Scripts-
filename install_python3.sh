@@ -36,7 +36,7 @@ make && make altinstall
 if [ $? == 0 ]; then
 	echo "=====Python3已安装成功====="
 	ln -s /usr/local/python3/bin/python3.8 /usr/bin/python3
-	ln -s /usr/local/python3/bin/pip3.8 /usr/bin/python3
+	ln -s /usr/local/python3/bin/pip3.8 /usr/bin/p
 	python3 --version && pip3 --version
 	if [ $? == 0 ]; then
 		exit 0
